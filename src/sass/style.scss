@@ -1,0 +1,292 @@
+// ============================================
+// BASE STYLES - Reset, Normalization & Typography
+// ============================================
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    @include smooth-scroll;
+    font-size: $font-size-base;
+}
+
+body {
+    font-family: $font-family;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: $line-height-base;
+    overflow-x: hidden;
+}
+
+// ============================================
+// TYPOGRAPHY
+// ============================================
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+    @include heading($font-size-base, 600, var(--text-dark));
+}
+
+h1 {
+    font-size: $font-size-h1;
+}
+
+h2 {
+    @include section-heading;
+}
+
+h3 {
+    font-size: $font-size-h3;
+    margin-bottom: var(--spacing-sm);
+}
+
+h4 {
+    font-size: $font-size-h4;
+}
+
+// Paragraphs
+p {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+// Links
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+    
+    &:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+    }
+}
+
+// Lists
+ul, ol {
+    margin-bottom: var(--spacing-md);
+}
+
+li {
+    margin-bottom: var(--spacing-xs);
+}
+
+// Address
+address {
+    font-style: normal;
+}
+
+// Code blocks
+code, pre {
+    font-family: 'Courier New', monospace;
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+}
+
+pre {
+    overflow-x: auto;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+// Strong & Emphasis
+strong {
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+em {
+    font-style: italic;
+}
+
+// Blockquote
+blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+// Horizontal Rule
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: var(--spacing-lg) 0;
+}
+
+// ============================================
+// CONTAINER
+// ============================================
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+// ============================================
+// ANIMATIONS - KEYFRAMES
+// ============================================
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+// ============================================
+// UTILITIES
+// ============================================
+
+// Margin utilities
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+.mt-5 { margin-top: var(--spacing-xl); }
+
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-5 { margin-bottom: var(--spacing-xl); }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+// Padding utilities
+.p-1 { padding: var(--spacing-xs); }
+.p-2 { padding: var(--spacing-sm); }
+.p-3 { padding: var(--spacing-md); }
+.p-4 { padding: var(--spacing-lg); }
+.p-5 { padding: var(--spacing-xl); }
+
+// Display utilities
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.d-none { display: none; }
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+
+// Opacity utilities
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+.opacity-100 { opacity: 1; }
+
+// Text utilities
+.text-muted { color: var(--text-muted); }
+.text-light { color: var(--text-light); }
+.text-primary { color: var(--primary-color); }
+.text-accent { color: var(--accent-color); }
+
+.font-weight-normal { font-weight: 400; }
+.font-weight-bold { font-weight: 600; }
+
+.text-uppercase { text-transform: uppercase; }
+.text-lowercase { text-transform: lowercase; }
+
+.text-nowrap { white-space: nowrap; }
+
+// Background utilities
+.bg-light { background-color: var(--bg-light); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-accent { background-color: var(--bg-accent); }
+.bg-primary { background-color: var(--primary-color); }
+
+// Border utilities
+.border { border: 1px solid var(--border-color); }
+.border-top { border-top: 1px solid var(--border-color); }
+.border-bottom { border-bottom: 1px solid var(--border-color); }
+.rounded { border-radius: var(--border-radius); }
+.rounded-lg { border-radius: var(--border-radius-lg); }
+
+// Shadow utilities
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow { box-shadow: var(--shadow); }

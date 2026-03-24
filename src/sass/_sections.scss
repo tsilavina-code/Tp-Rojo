@@ -1,0 +1,468 @@
+// ============================================
+// SECTIONS - Hero, About, Menu, Services, Guide, Lexicon, Contact, Footer
+// ============================================
+
+// ============================================
+// HERO SECTION
+// ============================================
+
+.hero {
+    @include gradient(135deg, var(--bg-accent), var(--bg-secondary));
+    padding: var(--spacing-xl) var(--spacing-md);
+    min-height: 500px;
+    @include flex-center;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+        opacity: 0.1;
+        border-radius: 50%;
+    }
+    
+    .container {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.hero-content {
+    h1 {
+        color: var(--primary-color);
+        margin-bottom: var(--spacing-md);
+        @include slideInDown(0.8s, 0s);
+    }
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-sm);
+    @include slideInUp(0.8s, 0.2s);
+    animation-fill-mode: both;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-lg);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    @include slideInUp(0.8s, 0.4s);
+    animation-fill-mode: both;
+}
+
+// ============================================
+// BUTTONS
+// ============================================
+
+.btn {
+    @include btn-primary;
+    
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+// ============================================
+// ABOUT SECTION
+// ============================================
+
+.about {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--bg-light);
+    
+    h2 {
+        color: var(--primary-color);
+    }
+}
+
+.about-content {
+    @include grid-auto-fit(300px);
+    margin-top: var(--spacing-lg);
+}
+
+.about-item {
+    @include card;
+    @include border-left-accent(var(--primary-color), 4px);
+    
+    h3 {
+        color: var(--primary-color);
+    }
+    
+    @include card-hover;
+}
+
+// ============================================
+// MENU SECTION
+// ============================================
+
+.menu {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-light) 100%);
+    
+    h2 {
+        color: var(--primary-color);
+    }
+}
+
+.menu-grid {
+    @include grid-auto-fit(250px);
+    margin-top: var(--spacing-lg);
+}
+
+.menu-item {
+    @include card(var(--bg-accent), 1px solid var(--border-color), var(--shadow-sm));
+    @include flex-setup(column, flex-start, flex-start, 0);
+    
+    h3 {
+        color: var(--primary-color);
+        font-size: 1.2rem;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    &:hover {
+        border-color: var(--primary-color);
+        @include card-hover;
+    }
+}
+
+.menu-description {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    flex-grow: 1;
+    margin-bottom: var(--spacing-md);
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    display: inline-block;
+}
+
+// ============================================
+// CONTACT SECTION
+// ============================================
+
+.contact {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--bg-light);
+    
+    h2 {
+        color: var(--primary-color);
+    }
+}
+
+.contact-grid {
+    @include grid-auto-fit(250px);
+    margin: var(--spacing-xl) 0;
+}
+
+.contact-item {
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    border-top: 3px solid var(--primary-color);
+    transition: var(--transition);
+    
+    h3 {
+        color: var(--primary-color);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    &:hover {
+        background-color: var(--bg-accent);
+        transform: scale(1.05);
+        box-shadow: var(--shadow);
+    }
+    
+    address {
+        color: var(--text-light);
+    }
+    
+    p {
+        margin: var(--spacing-xs) 0;
+    }
+}
+
+// ============================================
+// CONTACT FORM
+// ============================================
+
+.contact-form {
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    @include border-left-accent(var(--accent-color), 4px);
+    max-width: 600px;
+    margin: var(--spacing-xl) auto;
+    box-shadow: var(--shadow-sm);
+    
+    h3 {
+        color: var(--primary-color);
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+    @include flex-setup(column, flex-start, stretch, 0);
+    
+    label {
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    input,
+    textarea {
+        @include input-style;
+    }
+    
+    textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+}
+
+// ============================================
+// SERVICES SECTION (Hotel, Tea Room, Massages, Meeting Room)
+// ============================================
+
+.services-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    @include gradient(180deg, var(--bg-light), var(--bg-secondary));
+    
+    h2 {
+        color: var(--primary-color);
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+.services-grid {
+    @include grid-auto-fit(300px);
+}
+
+.service-card {
+    @include card;
+    @include border-top-accent(var(--accent-color), 3px);
+    
+    h3 {
+        color: var(--primary-color);
+        margin-bottom: var(--spacing-md);
+        font-size: 1.2rem;
+    }
+    
+    p {
+        color: var(--text-light);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    &:hover {
+        border-top-color: var(--primary-color);
+        @include card-hover;
+    }
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    
+    li {
+        padding: 8px 0;
+        color: var(--text-light);
+        border-bottom: 1px solid var(--border-color);
+        font-size: 0.95rem;
+        
+        &::before {
+            content: "✓ ";
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+// ============================================
+// GUIDE SECTION (Antananarivo)
+// ============================================
+
+.guide-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--bg-light);
+    
+    h2 {
+        color: var(--primary-color);
+        text-align: center;
+        margin-bottom: var(--spacing-xl);
+    }
+}
+
+.guide-grid {
+    @include grid-auto-fit(280px);
+}
+
+.guide-card {
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    @include border-left-accent(var(--primary-color), 4px);
+    box-shadow: var(--shadow-sm);
+    
+    h3 {
+        color: var(--primary-color);
+        margin-bottom: var(--spacing-md);
+        font-size: 1.1rem;
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+        
+        li {
+            padding: 10px 0;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+            
+            &:last-child {
+                border-bottom: none;
+            }
+            
+            strong {
+                color: var(--primary-dark);
+                font-weight: 600;
+            }
+        }
+    }
+    
+    &:hover {
+        border-left-color: var(--accent-color);
+        transform: translateX(8px);
+        box-shadow: var(--shadow);
+    }
+}
+
+// ============================================
+// LEXICON SECTION (Malagasy Words)
+// ============================================
+
+.lexicon-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    @include gradient(180deg, var(--bg-secondary), var(--bg-light));
+    
+    h2 {
+        color: var(--primary-color);
+        text-align: center;
+        margin-bottom: var(--spacing-xl);
+    }
+}
+
+.lexicon-grid {
+    @include grid-auto-fit(280px);
+}
+
+.lexicon-card {
+    background-color: var(--bg-accent);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    border: 2px solid var(--accent-color);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    
+    h4 {
+        color: var(--accent-color);
+        margin-bottom: var(--spacing-md);
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    &:hover {
+        border-color: var(--primary-color);
+        background-color: var(--bg-secondary);
+        box-shadow: var(--shadow);
+    }
+}
+
+.word-list {
+    @include flex-setup(column, flex-start, stretch, 0);
+}
+
+.word-item {
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+    align-items: center;
+    
+    &:last-child {
+        border-bottom: none;
+    }
+    
+    .malagasy {
+        font-weight: 600;
+        color: var(--primary-color);
+        font-size: 1rem;
+        font-style: italic;
+    }
+    
+    .translation {
+        color: var(--text-light);
+        font-size: 0.9rem;
+    }
+}
+
+// ============================================
+// FOOTER
+// ============================================
+
+.footer {
+    @include gradient(135deg, var(--primary-dark), var(--accent-color));
+    color: $white;
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    
+    p {
+        color: $white;
+        margin: var(--spacing-xs) 0;
+        
+        &:first-child {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+// ============================================
+// ACCESSIBILITY & MISC
+// ============================================
+
+@include reduce-motion;
+
+// Print styles
+@media print {
+    .header,
+    .btn {
+        display: none;
+    }
+    
+    body {
+        background: $white;
+    }
+}

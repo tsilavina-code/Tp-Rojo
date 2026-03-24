@@ -1,0 +1,455 @@
+// ============================================
+// RESPONSIVE DESIGN - Media Queries
+// ============================================
+
+// ============================================
+// TABLET BREAKPOINT (768px)
+// ============================================
+
+@include tablet {
+    // Typography
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        padding-bottom: var(--spacing-md);
+    }
+    
+    // Navigation
+    .nav-links {
+        gap: var(--spacing-md);
+        font-size: 0.95rem;
+    }
+    
+    // Hero Section
+    .hero {
+        min-height: 400px;
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    // Grids
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content,
+    .menu-grid {
+        gap: var(--spacing-md);
+    }
+    
+    // Service grids
+    .services-grid,
+    .guide-grid,
+    .lexicon-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    // Word items
+    .word-item {
+        grid-template-columns: auto 1fr;
+    }
+}
+
+// ============================================
+// MOBILE BREAKPOINT (480px)
+// ============================================
+
+@include mobile {
+    // Font size scaling
+    :root {
+        font-size: 14px;
+    }
+    
+    // Typography
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+    }
+    
+    // Navigation
+    .navbar {
+        .container {
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+    
+    // Hero Section
+    .hero {
+        min-height: 300px;
+        padding: var(--spacing-lg) var(--spacing-sm);
+        
+        &::before {
+            width: 300px;
+            height: 300px;
+        }
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+    }
+    
+    // Buttons
+    .btn {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+    
+    .btn-contact {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+    
+    // Grids
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form {
+        padding: var(--spacing-md);
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-grid,
+    .guide-grid,
+    .lexicon-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    // Service cards
+    .service-card {
+        h3,
+        h4 {
+            font-size: 1rem;
+        }
+    }
+    
+    .guide-card {
+        h3 {
+            font-size: 1rem;
+        }
+    }
+    
+    .lexicon-card {
+        h4 {
+            font-size: 1rem;
+        }
+        
+        padding: var(--spacing-md);
+    }
+    
+    // Sections padding
+    .services-section,
+    .guide-section,
+    .lexicon-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    // Contact section
+    .contact {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    // Menu item
+    .menu-item {
+        padding: var(--spacing-md);
+    }
+    
+    // Form
+    .form-group {
+        label {
+            font-size: 0.95rem;
+        }
+        
+        input,
+        textarea {
+            padding: var(--spacing-sm);
+            font-size: 0.95rem;
+        }
+        
+        textarea {
+            min-height: 100px;
+        }
+    }
+    
+    // Hero content
+    .hero-content {
+        h1 {
+            margin-bottom: var(--spacing-sm);
+        }
+    }
+    
+    // Price
+    .price {
+        font-size: 1.1rem;
+    }
+}
+
+// ============================================
+// CUSTOM BREAKPOINT - Small Mobile (360px)
+// ============================================
+
+@include respond-to(360px) {
+    .hero {
+        min-height: 250px;
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+    
+    .hero-content {
+        h1 {
+            font-size: 1.3rem;
+        }
+    }
+    
+    .nav-links {
+        gap: var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+// ============================================
+// LARGE SCREEN ENHANCEMENTS (1200px+)
+// ============================================
+
+@media (min-width: 1200px) {
+    // Allow some breathing room for large screens
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+    
+    // Enhance grid layouts
+    .services-grid,
+    .guide-grid,
+    .lexicon-grid {
+        gap: var(--spacing-xl);
+    }
+    
+    // Menu grid can be 4 columns on large screens
+    .menu-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    // About items
+    .about-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+// ============================================
+// ULTRA WIDE SCREENS (1600px+)
+// ============================================
+
+@media (min-width: 1600px) {
+    .menu-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+// ============================================
+// LANDSCAPE ORIENTATION
+// ============================================
+
+@media (orientation: landscape) and (max-height: 600px) {
+    .hero {
+        min-height: 400px;
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .hero-content {
+        h1 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+        }
+    }
+}
+
+// ============================================
+// TOUCH DEVICE SUPPORT
+// ============================================
+
+@media (hover: none) and (pointer: coarse) {
+    // Increase touch targets
+    .btn,
+    .nav-links a,
+    .dropdown-menu a,
+    .service-card,
+    .guide-card {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    // Longer transitions for touch
+    a {
+        transition: all 0.4s ease;
+    }
+}
+
+// ============================================
+// HIGH RESOLUTION DISPLAYS (Retina)
+// ============================================
+
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+    // Reduce box shadows for clarity on high res
+    .btn,
+    .card {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+}
+
+// ============================================
+// LOW LIGHT / DARK MODE SPECIFIC
+// ============================================
+
+@media (prefers-color-scheme: dark) {
+    // Adjust shadows for dark mode
+    .btn {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        
+        &:hover {
+            box-shadow: 0 4px 16px rgba(200, 113, 62, 0.2);
+        }
+    }
+    
+    // Enhance contrast for readability
+    .guide-card,
+    .service-card {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+// ============================================
+// REDUCED MOTION PREFERENCE
+// ============================================
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+// ============================================
+// PRINT MEDIA
+// ============================================
+
+@media print {
+    // Hide interactive elements
+    .header,
+    .btn,
+    .btn-contact,
+    .btn-link,
+    .nav-links,
+    .dropdown-menu,
+    .lang-menu,
+    .footer,
+    .contact-form {
+        display: none !important;
+    }
+    
+    // Setup print layout
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    // Sections
+    .hero {
+        background: none;
+        min-height: auto;
+    }
+    
+    .menu-item {
+        page-break-inside: avoid;
+    }
+    
+    // Links
+    a {
+        color: black;
+        text-decoration: none;
+        
+        &::after {
+            content: ' (' attr(href) ')';
+            font-size: 0.8em;
+        }
+    }
+    
+    // Headings
+    h1, h2, h3 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    
+    // Paragraphs
+    p {
+        page-break-inside: avoid;
+    }
+}
+
+// ============================================
+// BROWSER SPECIFIC FIXES
+// ============================================
+
+// Safari specific
+@supports (-webkit-appearance: none) {
+    .nav-links {
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+// Firefox specific
+@-moz-document url-prefix() {
+    .dropdown-menu {
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+// Edge/IE specific
+@supports (-ms-ime-align: auto) {
+    .hero {
+        min-height: 400px;
+    }
+}

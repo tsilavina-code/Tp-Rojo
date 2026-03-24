@@ -1,0 +1,125 @@
+// ============================================
+// VARIABLES - Colors, Spacing, Typography
+// ============================================
+
+// COLOR SYSTEM
+$primary-color: #C8713E;        // Warm terracotta
+$primary-dark: #A0562F;         // Deep brown
+$primary-light: #E8A876;        // Light tan
+
+$accent-color: #2D5016;         // Forest green
+$accent-light: #4A7C2C;         // Lighter green
+
+$text-dark: #2C2C2C;            // Near black
+$text-light: #6B6B6B;           // Medium gray
+$text-muted: #999999;           // Light gray
+
+$bg-light: #FEFDFB;             // Cream white
+$bg-secondary: #F5F2ED;         // Light beige
+$bg-accent: #FFF8F0;            // Warm white
+
+$border-color: #E0D5C7;         // Soft border
+$white: #FFFFFF;
+
+// SHADOWS
+$shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+$shadow-lg: 0 6px 20px rgba(200, 113, 62, 0.3);
+
+// SPACING SCALE
+$spacing-xs: 0.5rem;            // 8px
+$spacing-sm: 1rem;              // 16px
+$spacing-md: 1.5rem;            // 24px
+$spacing-lg: 2rem;              // 32px
+$spacing-xl: 3rem;              // 48px
+
+// BORDER RADIUS
+$border-radius: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+
+// TYPOGRAPHY
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$line-height-base: 1.6;
+$line-height-tight: 1.3;
+
+// FONT SIZES (will be adjusted per breakpoint)
+$font-size-base: 16px;
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.3rem;
+$font-size-h4: 1.1rem;
+
+// TRANSITIONS & ANIMATIONS
+$transition-default: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-fast: all 0.2s ease;
+$transition-smooth: width 0.3s ease;
+
+// BREAKPOINTS
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+
+// Z-INDEX SCALE
+$z-header: 1000;
+$z-dropdown: 100;
+$z-dropdown-lg: 1001;
+
+// DARK MODE COLORS
+$dark-text-dark: #F5F2ED;
+$dark-text-light: #C0B5A8;
+$dark-text-muted: #888888;
+$dark-bg-light: #1A1A1A;
+$dark-bg-secondary: #252522;
+$dark-bg-accent: #2D2925;
+$dark-border-color: #3F3C38;
+
+// ============================================
+// CSS CUSTOM PROPERTIES (Root Variables)
+// ============================================
+
+:root {
+    // Colors
+    --primary-color: #{$primary-color};
+    --primary-dark: #{$primary-dark};
+    --primary-light: #{$primary-light};
+    --accent-color: #{$accent-color};
+    --accent-light: #{$accent-light};
+    --text-dark: #{$text-dark};
+    --text-light: #{$text-light};
+    --text-muted: #{$text-muted};
+    --bg-light: #{$bg-light};
+    --bg-secondary: #{$bg-secondary};
+    --bg-accent: #{$bg-accent};
+    --border-color: #{$border-color};
+    
+    // Shadows
+    --shadow: #{$shadow};
+    --shadow-sm: #{$shadow-sm};
+    
+    // Spacing
+    --spacing-xs: #{$spacing-xs};
+    --spacing-sm: #{$spacing-sm};
+    --spacing-md: #{$spacing-md};
+    --spacing-lg: #{$spacing-lg};
+    --spacing-xl: #{$spacing-xl};
+    
+    // Borders
+    --border-radius: #{$border-radius};
+    --border-radius-lg: #{$border-radius-lg};
+    
+    // Transitions
+    --transition: #{$transition-default};
+}
+
+// DARK MODE SUPPORT
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-dark: #{$dark-text-dark};
+        --text-light: #{$dark-text-light};
+        --text-muted: #{$dark-text-muted};
+        --bg-light: #{$dark-bg-light};
+        --bg-secondary: #{$dark-bg-secondary};
+        --bg-accent: #{$dark-bg-accent};
+        --border-color: #{$dark-border-color};
+    }
+}
