@@ -2,7 +2,9 @@
 // BASE STYLES - Reset, Normalization & Typography
 // ============================================
 
-
+@import 'variables';
+@import 'mixins'; // <--- ici
+@import 'header';
 
 * {
     margin: 0;

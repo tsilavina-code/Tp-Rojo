@@ -325,3 +325,6 @@
     }
     background: linear-gradient($angle, $gradient);
 }
+@mixin smooth-scroll {
+  scroll-behavior: smooth;
+}

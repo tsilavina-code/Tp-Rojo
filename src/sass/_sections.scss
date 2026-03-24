@@ -6,6 +6,8 @@
 // HERO SECTION
 // ============================================
 
+
+
 .hero {
     @include gradient(135deg, var(--bg-accent), var(--bg-secondary));
     padding: var(--spacing-xl) var(--spacing-md);
